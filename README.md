@@ -1,5 +1,5 @@
 # node-arduino-serial
-NodeJs version of `arduino-serial`
+NodeJs version of `arduino-serial` commandline tool
 
 This was mostly done as an experiment on my part.
 I wanted to play around with `node-serialport` and
