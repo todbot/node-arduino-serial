@@ -1,0 +1,24 @@
+{
+  "name": "arduino-serial",
+  "version": "1.0.0",
+  "description": "NodeJs version of arduino-serial",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run compile"
+  },
+  "keywords": [
+    "arduino",
+    "serial"
+  ],
+  "bin": {
+    "arduino-serial": "./bin/arduino-serial"
+  },
+  "author": "Tod E. Kurt",
+  "license": "ISC",
+  "dependencies": {
+    "deasync": "^0.1.2",
+    "fs": "0.0.2",
+    "optparse": "^1.0.5",
+    "serialport": "git://github.com/ghostoy/node-serialport.git#nan1to2"
+  }
+}
