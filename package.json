@@ -1,6 +1,6 @@
 {
   "name": "arduino-serial",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "NodeJs version of arduino-serial commandline tool",
   "main": "main.js",
   "scripts": {
