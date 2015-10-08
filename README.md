@@ -2,8 +2,8 @@
 NodeJs version of `arduino-serial` commandline tool
 
 This was mostly done as an experiment on my part.
-I wanted to play around with `node-serialport` and
-figured recreating my [arduino-serial](https://github.com/todbot/arduino-serial/)
+I wanted to play around with [node-serialport](https://github.com/voodootikigod/node-serialport)
+and figured recreating my [arduino-serial](https://github.com/todbot/arduino-serial/)
 tool would be interesting.
 
 One of the features of the original `arduino-serial` is the order of the
@@ -19,10 +19,29 @@ everything in Node is async with callbacks, this becomes a bit trickier than
 expected.
 
 ### Requirements
-`node-arduino-serial` is designed for Node v4.x.
-It explicitly uses the branch of `node-serialport` that supports Node v4.x & NANv2.
+`node-arduino-serial` is expected to work in Node v4.x.  
+
+It explicitly uses the [ghostoy branch of `node-serialport`](https://github.com/ghostoy/node-serialport/tree/nan1to2)
+that supports Node v4.x & NANv2.  
+See the [node-serial port issue #578](https://github.com/voodootikigod/node-serialport/issues/578)
+for more details.
+
 See `package.json` for details if you want to do this yourself.
 
+Currently only tested on Node v4.1.2 on Mac OS X 10.10.5.
+
+### Installation
+Install and run globally with:
+```
+$ npm install -g arduino-serial
+$ arduino-serial -h
+```
+Or install and run locally:
+```
+$ git clone https://github.com/todbot/node-arduino-serial
+$ npm install
+$ ./bin/arduino-serial -h
+```
 
 ### Usage
 ```
@@ -38,12 +57,12 @@ Options:
 # -i  --stdinput             Use standard input
   -r, --receive              Receive string from Arduino & print it out
 # -n  --num=num              Send a number as a single byte
-# -F  --flush                Flush serial port buffers for fresh reading
+  -F  --flush                Flush serial port buffers for fresh reading
   -d  --delay=millis         Delay for specified milliseconds
 # -e  --eolchar=char         Specify EOL char for reads (default '
 ')
 # -t  --timeout=millis       Timeout for reads in millisecs (default 5000)
-# -q  --quiet                Don't print out as much info
+  -q  --quiet                Don't print out as much info
 ('#' indicate options not yet implemented)
 
 Note: Order is important. Set '-b' baud before opening port '-p'.
